@@ -12,12 +12,7 @@ const ProductDetailsScreen = ({navigation, route}) => {
     axios
       .get(`https://fakestoreapi.com/products/${route?.params?.id}`)
       .then(product => {
-        console.log(
-          '🚀 ~ getProductDetails ~ route?.params?.id:',
-          route?.params?.id,
-        );
         setProductDetails(product?.data);
-        console.log('🚀 ~ .then ~ response:', product);
       })
       .catch(function (error) {
         console.warn('Error', error);
